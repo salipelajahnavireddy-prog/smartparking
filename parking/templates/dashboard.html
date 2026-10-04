@@ -1,0 +1,44 @@
+<meta http-equiv="refresh" content="5">
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Smart Parking System</title>
+</head>
+
+
+<body>
+
+<h1>Smart Parking Dashboard</h1>
+
+
+<h2>Parking Slot Status</h2>
+
+
+{% for slot in slots %}
+
+<p>
+    Slot {{slot.slot_number}} :
+
+    {% if slot.status == "occupied" %}
+        🔴 Occupied
+
+    {% else %}
+        🟢 Available
+
+    {% endif %}
+
+</p>
+
+
+{% empty %}
+
+<p>No parking data available</p>
+
+{% endfor %}
+
+
+</body>
+
+</html>
